@@ -17,7 +17,7 @@
     "description" : "SwaggerHub API Auto Mocking"
   } ],
   "paths" : {
-    "/name/todos" : {
+    "/name/todos/test" : {
       "get" : {
         "tags" : [ "developers" ],
         "summary" : "collects data",
