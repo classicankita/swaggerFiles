@@ -1,0 +1,76 @@
+{
+  "openapi" : "3.0.0",
+  "info" : {
+    "title" : "todoAPI",
+    "description" : "This is a simple API",
+    "contact" : {
+      "email" : "you@your-company.com"
+    },
+    "license" : {
+      "name" : "Apache 2.0",
+      "url" : "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version" : "1.0.0"
+  },
+  "servers" : [ {
+    "url" : "https://virtserver.swaggerhub.com/nagarro14/demo/1.0.0",
+    "description" : "SwaggerHub API Auto Mocking"
+  }, {
+    "url" : "https://api-2445583737087.staging.gw.apicast.io:443",
+    "description" : "SwaggerHub API Auto Mocking"
+  } ],
+  "paths" : {
+    "/name/todos" : {
+      "get" : {
+        "tags" : [ "developers" ],
+        "summary" : "collects data",
+        "description" : "By passing in the appropriate options, you can search for\navailable inventory in the system\n",
+        "operationId" : "searchInventory",
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/peopleDetail"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "peopleDetail" : {
+        "required" : [ "completed", "id", "title", "userId" ],
+        "type" : "object",
+        "properties" : {
+          "userId" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "id" : {
+            "type" : "string",
+            "example" : "1"
+          },
+          "title" : {
+            "type" : "string",
+            "example" : "abc"
+          },
+          "completed" : {
+            "type" : "string",
+            "example" : "false"
+          }
+        }
+      }
+    }
+  }
+}
